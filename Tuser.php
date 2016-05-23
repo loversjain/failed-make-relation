@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tuser extends Model  implements  Authenticatable
 {
-	 
+    protected $table='Tusers';
     use \Illuminate\Auth\Authenticatable;
     
     public function tposts(){
