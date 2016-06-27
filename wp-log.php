@@ -80,3 +80,14 @@ if ($feat_image !=""):?>
   <?php else: echo " ";?>
 
 <?php endif;?> 
+
+//create directory before wordpress directory then edit in .htaccess file
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} ^/other/(.*)$ [OR]
+RewriteRule ^.*$ - [L]
+</IfModule>
+
+//other is directory name
