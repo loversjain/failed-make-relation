@@ -91,3 +91,18 @@ RewriteRule ^.*$ - [L]
 </IfModule>
 
 //other is directory name
+
+
+<?php
+//get content by many ids
+$args = array(
+  'post_type' => 'page',
+  'post__in' => [ 20, 24, 15,13,34] 
+);
+$page_query = new WP_Query( $args );
+if( $page_query->have_posts() ) :
+while( $page_query->have_posts() ) : $page_query->the_post();
+echo the_title().'<br>';
+endwhile;
+endif;
+?>
